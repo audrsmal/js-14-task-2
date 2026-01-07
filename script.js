@@ -7,15 +7,11 @@ const buildScreen = async () => {
   const coins = await response.json();
   console.log(coins);
 
+  coins.sort((a, b) => a.name.localeCompare(b.name));
+
   coins.forEach((coin) => {
     const card = document.createElement("div");
     card.classList.add("card");
-
-    coins.sort((a, b) => {
-      if (a.name < b.name) return -1;
-      if (a.name > b.name) return 1;
-      return 0;
-    });
 
     const title = document.createElement("h2");
     title.innerText = coin.name;
@@ -25,6 +21,9 @@ const buildScreen = async () => {
 
     const price = document.createElement("h4");
     price.textContent = `Value: $${coin.current_price}`;
+
+    const image = document.createElement("img");
+    image.src = coin.image;
 
     if (coin.current_price >= 100) {
       card.classList.add("expensive");
@@ -38,7 +37,7 @@ const buildScreen = async () => {
       console.log(coin.name);
     });
 
-    card.append(title, symbol, price);
+    card.append(title, symbol, price, image);
     cryptoWrapper.append(card);
   });
 };

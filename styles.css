@@ -19,9 +19,15 @@
   background-color: rgb(182, 151, 112);
 }
 
+.card img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
 .expensive {
   border: solid 5px gold;
 }
 .cheap {
-  border: solid 5px red;
+  border: solid 5px silver;
 }
