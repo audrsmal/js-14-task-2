@@ -27,9 +27,7 @@ const buildScreen = async () => {
 
     if (coin.current_price >= 100) {
       card.classList.add("expensive");
-    }
-
-    if (coin.current_price <= 100) {
+    } else {
       card.classList.add("cheap");
     }
 
