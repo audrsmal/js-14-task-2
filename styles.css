@@ -17,6 +17,12 @@
   width: 500px;
   text-align: center;
   background-color: rgb(182, 151, 112);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
